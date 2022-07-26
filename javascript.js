@@ -34,30 +34,18 @@ function validateInput(choice) {
 function playRound() {
   const computerSelection = getComputerChoice()
   const userChoice = getUserChoice();
-  if (userChoice == "rock") {
-    if (computerSelection == "scissors") {
-      return "win";
-    } else if (computerSelection == "paper") {
-      return "lost";
-    } else {
-      return "tie";
-    }
-  } else if (userChoice == "scissors") {
-    if (computerSelection == "paper") {
-      return "win";
-    } else if (computerSelection == "rock") {
-      return "lost";
-    } else {
-      return "tie";
-    }
-  } else if (userChoice == "paper") {
-    if (computerSelection == "rock") {
-      return "win";
-    } else if (computerSelection == "scissors") {
-      return "lost";
-    } else {
-      return "tie";
-    }
+  if (userChoice == computerSelection) {
+    return "Tie"
+  }
+  else if (
+    (userChoice == "rock" && computerSelection == "scissors") ||
+    (userChoice == "scissors" && computerSelection == "paper") ||
+    (userChoice =="paper" && computerSelection=="rock")
+  ) {
+    return "win";
+  }
+  else {
+    return "lost";
   }
 }
 
@@ -85,7 +73,7 @@ function game() {
     console.log("Computer rounds won: " + computerWins);
   }
   if (playerWins > computerWins) {
-    console.log("Winner");
+    console.log("You won the game");
   } else if (computerWins > playerWins) {
     console.log("better luck next time");
   } else {
