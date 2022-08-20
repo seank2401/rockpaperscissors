@@ -5,7 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RockPaperScissors</title>
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="gameHeader">
+      <div id="gameTitle">ROCK | PAPER | SCISSORS</div>
+      <div id="gameRules">First to win five rounds wins the game</div>
+    </header>
+    <div id="scoreboard">
+      <div id="computerScore">Computer Score:</div>
+      <div id="playerScore">Player Score:</div>
+      <div id="roundResult">No Rounds Played Yet!</div>
+    </div>
+    <div id="buttonDiv">
+      <button class="playbtn" id="rock">
+        rock
+        <div class="buttonEmoji">🪨</div>
+      </button>
+      <button class="playbtn" id="paper">
+        paper
+        <div class="buttonEmoji">📰</div>
+      </button>
+      <button class="playbtn" id="scissors">
+        scissors
+        <div class="buttonEmoji">✂</div>
+      </button>
+    </div>
+    <div id="modalContainer">
+      <div class="modal">modal</div>
+      <button data-close-button id="close">Play Again?</button>
+    </div>
+    <div id="overlay"></div>
+  </body>
 </html>

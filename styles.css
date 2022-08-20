@@ -1,0 +1,114 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.gameHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 25px 0 25px;
+  font-size: 32px;
+  background-color: gainsboro;
+}
+
+#scoreboard {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#playerScore,
+#computerScore,
+#roundResult {
+  margin: 12px 0 12px;
+  font-size: 24px;
+}
+
+#buttonDiv {
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+}
+
+.playbtn {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: #7cad9f;
+  border: none;
+  font-size: 25px;
+  transition: transform 250ms ease-out;
+}
+
+.buttonEmoji {
+  margin-top: 20px;
+  font-size: 75px;
+}
+
+.playbtn:hover {
+  transform: scale(1.1);
+  transition: transform 250ms ease-in;
+  background-color: bisque;
+}
+
+/* -------------MODAL BLOCKS------------- */
+
+#modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 180px;
+  max-width: 80%;
+  padding: 32px;
+  text-align: center;
+}
+
+#modalContainer.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0%;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+#modalContainer {
+  font-size: 24px;
+}
+
+#close {
+  border: none;
+  border-radius: 8px;
+  background-color: #7cad9f;
+  padding: 5px 15px;
+  margin-top: 10px;
+  font-size: 18px;
+  transition: transform 250ms ease-out;
+}
+
+#close:hover{
+  transform: scale(1.1);
+  transition: transform 250ms ease-in;
+  background-color: bisque;
+}
